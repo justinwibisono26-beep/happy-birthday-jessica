@@ -1,168 +1,194 @@
-// Loading
-window.addEventListener("load", () => {
-    document.body.classList.add("loaded");
-});
-
-// Countdown
-const birthday = new Date("July 20, 2026 00:00:00").getTime();
-
-const timer = setInterval(() => {
-    const now = new Date().getTime();
-    const distance = birthday - now;
-
-    if (distance <= 0) {
-        document.getElementById("countdown").innerHTML =
-            "🎉 Happy Birthday Sayanggkuu Duniaku ❤️";
-        clearInterval(timer);
-        return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    document.getElementById("countdown").innerHTML =
-        `${days} Hari ${hours} Jam ${minutes} Menit ${seconds} Detik`;
-}, 1000);
-
-// Floating Hearts
-function createHeart() {
-    const heart = document.createElement("div");
-
-    heart.innerHTML = "❤";
-    heart.classList.add("heart");
-
-    heart.style.left = Math.random() * window.innerWidth + "px";
-    heart.style.fontSize = (15 + Math.random() * 25) + "px";
-    heart.style.animationDuration = (4 + Math.random() * 4) + "s";
-
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 8000);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-setInterval(createHeart, 300);
-
-// Auto Slider
-let slideIndex = 0;
-
-const slides = document.querySelectorAll(".slide");
-
-function showSlides() {
-
-    slides.forEach((slide) => {
-        slide.style.display = "none";
-    });
-
-    slideIndex++;
-
-    if (slideIndex > slides.length) {
-        slideIndex = 1;
-    }
-
-    if (slides.length > 0) {
-        slides[slideIndex - 1].style.display = "block";
-    }
-
-    setTimeout(showSlides, 3000);
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff0f5; /* Lavender Blush - Pink Lembut */
+    color: #4a4a4a;
+    overflow-x: hidden;
+    min-height: 100vh;
 }
 
-showSlides();
-
-// Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function(e){
-        e.preventDefault();
-        document.querySelector(this.getAttribute("href"))
-        .scrollIntoView({
-            behavior:"smooth"
-        });
-    });
-
-// Loading
-window.addEventListener("load", () => {
-    document.body.classList.add("loaded");
-});
-
-// Countdown
-const birthday = new Date("July 20, 2026 00:00:00").getTime();
-
-const timer = setInterval(() => {
-    const now = new Date().getTime();
-    const distance = birthday - now;
-
-    if (distance <= 0) {
-        document.getElementById("countdown").innerHTML =
-            "🎉 Happy Birthday Sayanggkuu Duniaku ❤️";
-        clearInterval(timer);
-        return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    document.getElementById("countdown").innerHTML =
-        `${days} Hari ${hours} Jam ${minutes} Menit ${seconds} Detik`;
-}, 1000);
-
-// Floating Hearts
-function createHeart() {
-    const heart = document.createElement("div");
-
-    heart.innerHTML = "❤";
-    heart.classList.add("heart");
-
-    heart.style.left = Math.random() * window.innerWidth + "px";
-    heart.style.fontSize = (15 + Math.random() * 25) + "px";
-    heart.style.animationDuration = (4 + Math.random() * 4) + "s";
-
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 8000);
+/* --- Tampilan Loading --- */
+.loading {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: #fff0f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.8s ease;
+}
+.loading h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    color: #ff4b72;
+    animation: pulse 1.5s infinite alternate;
 }
 
-setInterval(createHeart, 300);
-
-// Auto Slider
-let slideIndex = 0;
-
-const slides = document.querySelectorAll(".slide");
-
-function showSlides() {
-
-    slides.forEach((slide) => {
-        slide.style.display = "none";
-    });
-
-    slideIndex++;
-
-    if (slideIndex > slides.length) {
-        slideIndex = 1;
-    }
-
-    if (slides.length > 0) {
-        slides[slideIndex - 1].style.display = "block";
-    }
-
-    setTimeout(showSlides, 3000);
+/* --- Halaman Utama (Hero) --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(255,240,245,0.8), rgba(255,228,225,1));
+}
+.hero-content {
+    animation: fadeIn 1.2s ease forwards;
+}
+.hero h2 {
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #8b7b8b;
+    margin-bottom: 10px;
+}
+.hero h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.8rem;
+    color: #ff4b72;
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+.hero .name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #6c5c6c;
+    margin-bottom: 25px;
 }
 
-showSlides();
+/* Container Foto Utama di Hero */
+.hero-image-container {
+    margin-bottom: 30px;
+}
+.hero-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 50%; /* Bulat estetik */
+    border: 8px solid white;
+    box-shadow: 0 10px 25px rgba(255, 75, 114, 0.2);
+    object-fit: cover;
+}
 
-// Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function(e){
-        e.preventDefault();
-        document.querySelector(this.getAttribute("href"))
-        .scrollIntoView({
-            behavior:"smooth"
-        });
-    });
-});
+/* --- Desain Tombol --- */
+button {
+    padding: 14px 32px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background-color: #ff4b72;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 75, 114, 0.3);
+    transition: all 0.3s ease;
+}
+button:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 7px 22px rgba(255, 75, 114, 0.5);
+    background-color: #ff335c;
+}
+
+/* --- Halaman Surat (Letter) --- */
+.letter {
+    padding: 40px 20px;
+}
+.letter-card {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 40px;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+    text-align: center;
+    animation: slideUp 1s ease forwards;
+}
+.letter h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.8rem;
+    color: #ff4b72;
+    margin-bottom: 30px;
+}
+.letter-content p {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    margin-bottom: 22px;
+    color: #555;
+    font-weight: 300;
+}
+.letter-content .closing {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.2rem;
+    color: #ff4b72;
+    line-height: 1.4;
+    margin-top: 30px;
+}
+
+/* --- Susunan Galeri Foto Grid (Bagus & Rapi) --- */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin: 35px 0;
+}
+.gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 4px solid white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.gallery img:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    z-index: 2;
+}
+
+/* --- Efek Hati Jatuh --- */
+#hearts {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 99;
+}
+.heart-drop {
+    position: absolute;
+    color: #ff4b72;
+    opacity: 0.8;
+    animation: fall linear forwards;
+}
+
+/* --- Keyframes Animasi --- */
+@keyframes pulse { from { transform: scale(0.96); } to { transform: scale(1.04); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fall {
+    to {
+        transform: translateY(105vh) rotate(360deg);
+    }
+}
+
+/* Responsif Mobile (Biar tetep bagus di HP) */
+@media (max-width: 600px) {
+    .hero h1 { font-size: 2.8rem; }
+    .hero h2 { font-size: 1rem; letter-spacing: 2px; }
+    .hero .name { font-size: 1.1rem; }
+    .hero-image { max-width: 220px; }
+    
+    .letter-card { padding: 25px; }
+    .letter h2 { font-size: 2.2rem; }
+    .gallery { grid-template-columns: repeat(2, 1fr); }
+    .gallery img { height: 140px; }
+}
