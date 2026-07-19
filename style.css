@@ -1,0 +1,128 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(180deg,#ffd6e7,#ffeef5,#fff7fb);
+    overflow-x:hidden;
+    color:#444;
+}
+
+.loading{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:#ffc7dd;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    transition:.8s;
+}
+
+.loading h1{
+    font-family:'Great Vibes',cursive;
+    color:white;
+    font-size:55px;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+    position:relative;
+}
+
+.hero h2{
+    color:#ff6ea8;
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.hero h1{
+    font-family:'Great Vibes',cursive;
+    font-size:65px;
+    color:#ff4f93;
+    line-height:1.2;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:22px;
+    color:#666;
+    margin-bottom:30px;
+}
+
+button{
+    background:#ff5f9e;
+    color:white;
+    border:none;
+    padding:16px 34px;
+    border-radius:999px;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 10px 30px rgba(255,105,180,.3);
+}
+
+button:hover{
+    transform:translateY(-3px) scale(1.05);
+    background:#ff3f89;
+}
+
+.letter{
+    display:none;
+    max-width:900px;
+    margin:auto;
+    background:white;
+    border-radius:30px;
+    padding:40px;
+    box-shadow:0 20px 60px rgba(0,0,0,.08);
+    margin-bottom:80px;
+}
+
+.letter h2{
+    font-family:'Great Vibes',cursive;
+    color:#ff4f93;
+    font-size:48px;
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.letter p{
+    font-size:18px;
+    line-height:2;
+    color:#555;
+    text-align:center;
+}
+
+.gallery{
+    margin-top:40px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:20px;
+    object-fit:cover;
+    aspect-ratio:1/1;
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+    transition:.4s;
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+#musicBtn{
+    display:block;
+    margin:40px auto 0;
+}
