@@ -1,83 +1,81 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Jessica ❤️</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Jessica ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Poppins (Clean) & Great Vibes (Estetik Script) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<div class="loading">
-<h1>loading...</h1>
-</div>
+    <!-- Efek Loading Cantik -->
+    <div class="loading">
+        <h1>Loading Love...</h1>
+    </div>
 
-<div id="hearts"></div>
+    <!-- Container untuk Efek Hujan Hati -->
+    <div id="hearts"></div>
 
-<section class="hero">
+    <!-- Halaman Utama (Hero Section) -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>20 July 2026</h2>
+            <h1>happy birthday sayanggkuu duniaku ❤️</h1>
+            <p class="name">Jessica Adelia Putri</p>
+            
+            <div class="hero-image-container">
+                <img src="assets/IMG_5149.jpg" alt="Jessica & Sayang" class="hero-image">
+            </div>
 
-<h2>20 july 2026</h2>
+            <button id="openBtn">
+                open my heart 💌
+            </button>
+        </div>
+    </section>
 
-<h1>happy birthday sayanggkuu duniaku ❤️</h1>
+    <!-- Halaman Surat (Letter Section) - Tersembunyi Awalnya -->
+    <section class="letter" id="letter" style="display: none;">
+        <div class="letter-card">
+            <h2>for my favorite person 🤍</h2>
+            
+            <div class="letter-content">
+                <p>happy birthday ya sayang.</p>
+                <p>makasih udah hadir di hidup aku.<br>
+                makasih udah nemenin aku di setiap cerita,<br>
+                di setiap hari yang kadang capek, kadang nyebelin,<br>
+                tapi selalu jadi lebih indah karena ada kamu.</p>
+                
+                <p><i>i'm so lucky to have you.</i></p>
+                
+                <p>semoga di umur yang baru ini,<br>
+                semua doa kamu satu-satu dikabulkan Tuhan.</p>
+                
+                <p>aku cuma mau kamu tetap jadi jessica yang aku kenal,<br>
+                yang selalu bikin aku nyaman,<br>
+                yang senyumnya selalu berhasil bikin hari aku lebih baik.</p>
+                
+                <p class="closing">i love you,<br>today,<br>tomorrow,<br>and every single day after this.</p>
+            </div>
 
-<p>Jessica Adelia Putri</p>
+            <!-- Galeri Foto Kebersamaan - Design Bagus & Rapi -->
+            <div class="gallery">
+                <img src="assets/IMG_4840.jpg" alt="Momen Kita 1">
+                <img src="assets/4aadc7c3-31fe-4cbd-a2da-a4634bc86b8d.jpg" alt="Momen Kita 2">
+                <img src="assets/IMG_4214.jpg" alt="Momen Kita 3">
+                <img src="assets/IMG_4212.jpg" alt="Momen Kita 4">
+                <img src="assets/IMG_4213.jpg" alt="Momen Kita 5">
+                <img src="assets/IMG_4694.jpg" alt="Momen Kita 6">
+            </div>
 
-<button id="openBtn">
-open my heart 💌
-</button>
+            <button id="musicBtn">
+                🎵 play our song
+            </button>
+            <audio id="bgMusic" src="assets/our-song.mp3" loop></audio>
+        </div>
+    </section>
 
-</section>
-
-<section class="letter" id="letter">
-
-<h2>for my favorite person 🤍</h2>
-
-<p>
-happy birthday ya sayang.
-
-makasih udah hadir di hidup aku.
-makasih udah nemenin aku di setiap cerita,
-di setiap hari yang kadang capek,
-kadang nyebelin,
-tapi selalu jadi lebih indah karena ada kamu.
-
-i'm so lucky to have you.
-
-semoga di umur yang baru ini,
-semua doa kamu satu-satu dikabulkan Tuhan.
-
-aku cuma mau kamu tetap jadi jessica yang aku kenal,
-yang selalu bikin aku nyaman,
-yang senyumnya selalu berhasil bikin hari aku lebih baik.
-
-i love you,
-today,
-tomorrow,
-and every single day after this.
-</p>
-
-<div class="gallery">
-
-<img src="assets/photo1.jpg">
-<img src="assets/photo2.jpg">
-<img src="assets/photo3.jpg">
-<img src="assets/photo4.jpg">
-<img src="assets/photo5.jpg">
-<img src="assets/photo6.jpg">
-
-</div>
-
-<button id="musicBtn">
-🎵 play our song
-</button>
-
-</section>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
